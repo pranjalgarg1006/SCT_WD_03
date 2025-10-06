@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5; /* simple professional background */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.calculator {
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  width: 320px;
+  transition: transform 0.3s;
+}
+
+.calculator:hover {
+  transform: scale(1.02); /* subtle animation */
+}
+
+.expression {
+  width: 100%;
+  height: 30px;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  text-align: right;
+  color: #aaa;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.display {
+  width: 100%;
+  padding: 15px;
+  font-size: 2rem;
+  text-align: right;
+  border: none;
+  background: #27293d;
+  border-radius: 8px;
+  color: #fff;
+  overflow-x: auto;     
+  white-space: nowrap;  
+}
+
+.display::-webkit-scrollbar,
+.expression::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #3c3f58;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #56597d;
+}
+
+.operator {
+  background-color: #ff9f0d;
+}
+
+.operator:hover {
+  background-color: #ffb84d;
+}
+
+.equal {
+  grid-column: span 4;
+  background-color: #00d084;
+}
+
+.equal:hover {
+  background-color: #33e5a3;
+}
+
+.advanced-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.adv {
+  background-color: #6c5ce7;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.adv:hover {
+  background-color: #a29bfe;
+}
+
+
+/* Background canvas behind calculator */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;   /* stays behind everything */
+  background: #0d1b2a;  /* dark background */
+}
